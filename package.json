@@ -10,12 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "lucide-react": "^0.555.0",
-=======
     "chart.js": "^4.5.1",
     "leaflet": "^1.9.4",
->>>>>>> 8e6157ee3511fed379caf5ab7ac5d94186404dc9
+    "lucide-react": "^0.555.0",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.0",

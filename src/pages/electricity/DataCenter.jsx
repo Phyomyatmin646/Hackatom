@@ -6,13 +6,13 @@ export default function DataCenter() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+      <section className="relative bg-linear-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start lg:min-h-[500px]">
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="space-y-8 flex flex-col justify-center">
               <div className="flex items-center gap-4">
                 <Power className="w-12 h-12 text-green-400" />
                 <span className="text-green-400 font-bold tracking-wider uppercase text-sm">
@@ -41,13 +41,13 @@ export default function DataCenter() {
             </div>
 
             {/* Right Slideshow */}
-            <div className="relative">
-              <div className="w-full h-96 lg:h-full lg:min-h-[500px] xl:min-h-[650px] rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative h-96 lg:h-[500px]">
+              <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl">
                 <Slideshow
                   images={[
-                    { src: "/images/datacenter1.png", title: "50 MW Critical Power", caption: "N+2 Redundancy • Lithium BESS" },
-                    { src: "/images/datacenter2.png", title: "Biogas Power Plant", caption: "100% Renewable Backup" },
-                    { src: "/images/datacenter3.png", title: "Mission Control Room", caption: "24/7 Real-time Monitoring" },
+                    { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop", title: "50 MW Critical Power", caption: "N+2 Redundancy • Lithium BESS" },
+                    { src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop", title: "Biogas Power Plant", caption: "100% Renewable Backup" },
+                    { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop", title: "Mission Control Room", caption: "24/7 Real-time Monitoring" },
                   ]}
                 />
               </div>
@@ -73,7 +73,7 @@ export default function DataCenter() {
               { icon: Zap, title: "99.9999% Uptime", desc: "Proven six-nines reliability in live deployments", color: "text-yellow-500" },
               { icon: Leaf, title: "Carbon Negative Ready", desc: "Biogas + carbon capture from farm waste", color: "text-green-600" }
             ].map((item, i) => (
-              <div key={i} className="group bg-gradient-to-b from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-2xl transition-all duration-300">
+              <div key={i} className="group bg-linear-to-b from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-2xl transition-all duration-300">
                 <item.icon className={`w-14 h-14 ${item.color} mb-6 group-hover:scale-110 transition-transform`} />
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
@@ -88,7 +88,7 @@ export default function DataCenter() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-16 bg-gradient-to-r from-blue-800 to-indigo-900 text-white">
+      <section className="py-16 bg-linear-to-r from-blue-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[

@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Slideshow = ({ images, interval = 4500 }) => {
   const [current, setCurrent] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -14,24 +15,33 @@ const Slideshow = ({ images, interval = 4500 }) => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
   const nextSlide = () => setCurrent((prev) => (prev + 1) % images.length);
 
+  const handleImageLoad = (index) => {
+    setLoadedImages((prev) => ({ ...prev, [index]: true }));
+  };
+
   return (
-    <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl group">
+    <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl group bg-gray-900">
       {/* Slides Container */}
       <div className="relative w-full h-full">
         {images.map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt={img.title || 'SNR Agriculture Infrastructure'}
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              i === current ? 'opacity-100' : 'opacity-0'
-            }`}
-            loading="lazy"
-          />
+          <div key={i} className="absolute inset-0">
+            <img
+              src={img.src}
+              alt={img.title || 'SNR Agriculture Infrastructure'}
+              className={`w-full h-full object-cover transition-opacity duration-1000 ${
+                i === current ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => handleImageLoad(i)}
+              crossOrigin="anonymous"
+            />
+            {!loadedImages[i] && i === current && (
+              <div className="absolute inset-0 bg-linear-to-br from-gray-800 to-gray-900 animate-pulse" />
+            )}
+          </div>
         ))}
 
         {/* Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent z-10 pointer-events-none" />
 
         {/* Caption */}
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white z-20 pointer-events-none">
@@ -53,14 +63,14 @@ const Slideshow = ({ images, interval = 4500 }) => {
           className="bg-white/20 hover:bg-white/40 backdrop-blur-sm p-4 rounded-full transition"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-8 h-8" />
+          <ChevronLeft className="w-8 h-8 text-white" />
         </button>
         <button
           onClick={nextSlide}
           className="bg-white/20 hover:bg-white/40 backdrop-blur-sm p-4 rounded-full transition"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-8 h-8" />
+          <ChevronRight className="w-8 h-8 text-white" />
         </button>
       </div>
 
