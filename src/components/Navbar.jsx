@@ -43,7 +43,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                to="/location"
+                to="/Location"
                 className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors"
               >
                 Location
@@ -57,7 +57,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
-                Locations
+                Agricultural
                 <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
