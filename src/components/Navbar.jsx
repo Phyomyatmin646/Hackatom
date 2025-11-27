@@ -1,11 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
-  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownTimeout = useRef(null);
+
+  const handleMouseEnter = (dropdown) => {
+    if (dropdownTimeout.current) {
+      clearTimeout(dropdownTimeout.current);
+    }
+    setOpenDropdown(dropdown);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 200);
+  };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -56,13 +68,13 @@ const Navbar = () => {
             {/* Dropdown */}
             <li
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => handleMouseEnter('agricultural')}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Agricultural
                 <svg
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'agricultural' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -71,7 +83,7 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {isDropdownOpen && (
+              {openDropdown === 'agricultural' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
                   <Link
                     to="/locations/data-center"
@@ -86,13 +98,13 @@ const Navbar = () => {
                     Falam
                   </Link>
                   <Link
-                    to="/locations/operators"
+                    to="/locations/thantlang"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
                     Thantlang
                   </Link>
                   <Link
-                    to="/locations/operators"
+                    to="/locations/tedim"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
                     Tedim
@@ -110,13 +122,13 @@ const Navbar = () => {
             {/* Other Dropdowns */}
             <li
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen1(true)}
-              onMouseLeave={() => setIsDropdownOpen1(false)}
+              onMouseEnter={() => handleMouseEnter('electricity')}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Electricity
                 <svg
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen1 ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'electricity' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -125,7 +137,7 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {isDropdownOpen1 && (
+              {openDropdown === 'electricity' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
                   <Link
                     to="/grid"
@@ -145,13 +157,13 @@ const Navbar = () => {
 
             <li
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen2(true)}
-              onMouseLeave={() => setIsDropdownOpen2(false)}
+              onMouseEnter={() => handleMouseEnter('waste')}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Waste
                 <svg
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen2 ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'waste' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -160,16 +172,16 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {isDropdownOpen2 && (
+              {openDropdown === 'waste' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
                   <Link
-                    to="/locations/data-center"
+                    to="/locations/mutation"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
                     Mutation
                   </Link>
                   <Link
-                    to="/locations/farms"
+                    to="/locations/soil-erosion"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
                     Soil Erosion

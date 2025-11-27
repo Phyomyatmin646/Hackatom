@@ -29,6 +29,8 @@ function App() {
         <Route path="/locations/data-center" element={<LocationDataCenter />} />
         <Route path="/locations/farms" element={<Farms />} />
         <Route path="/locations/operators" element={<Operators />} />
+        <Route path="/locations/thantlang" element={<Operators />} />
+        <Route path="/locations/tedim" element={<Operators />} />
         <Route path="/locations/kalay" element={<Kalay />} />
         <Route path="/locations/main-longyi" element={<MainLongyi />} />
         <Route path="/locations/grid" element={<LocationGrid />} />
