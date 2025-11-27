@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16 md:h-[70px]">
           {/* Logo */}
           <Link to="/" className="text-xl md:text-2xl font-bold text-blue-900 hover:text-blue-700 transition-colors">
-            SNR Agriculture
+            UF<sub>6</sub>
           </Link>
 
           {/* Mobile menu button */}
@@ -57,7 +57,7 @@ const Navbar = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
-                Locations
+                Agriculture
                 <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -75,19 +75,25 @@ const Navbar = () => {
                     to="/locations/farms"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                    City 2
+                  Falam
                   </Link>
                   <Link
                     to="/locations/operators"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                    City 3
+                  Thantlang
                   </Link>
                   <Link
                     to="/locations/operators"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                    City 4
+                    Tedim
+                  </Link>
+                  <Link
+                    to="/locations/operators"
+                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
+                  >
+                    Kalay
                   </Link>
                 </div>
               )}

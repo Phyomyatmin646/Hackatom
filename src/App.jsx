@@ -6,6 +6,8 @@ import Contact from './pages/Contact.jsx';
 import DataCenter from './pages/locations/DataCenter.jsx';
 import Farms from './pages/locations/Farms.jsx';
 import Operators from './pages/locations/Operators.jsx';
+import Kalay from './pages/locations/Kalay.jsx';
+import MainLongyi from './pages/locations/Main-longyi.jsx'; // ✅ Fixed
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/locations/data-center" element={<DataCenter />} />
         <Route path="/locations/farms" element={<Farms />} />
         <Route path="/locations/operators" element={<Operators />} />
+        <Route path="/locations/kalay" element={<Kalay />} />
+        <Route path="/locations/main-longyi" element={<MainLongyi />} /> {/* ✅ Added */}
       </Routes>
     </div>
   );
