@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
+  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -39,6 +41,14 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
+            <li>
+              <Link
+                to="/location"
+                className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors"
+              >
+                Location
+              </Link>
+            </li>
 
             {/* Dropdown */}
             <li
@@ -59,32 +69,92 @@ const Navbar = () => {
                     to="/locations/data-center"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                    Data Center
+                   Hakka
                   </Link>
                   <Link
                     to="/locations/farms"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                    Farms
+                    City 2
                   </Link>
                   <Link
                     to="/locations/operators"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                    Operators
+                    City 3
+                  </Link>
+                  <Link
+                    to="/locations/operators"
+                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
+                  >
+                    City 4
                   </Link>
                 </div>
               )}
             </li>
 
-            <li>
-              <Link
-                to="/about"
-                className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors"
-              >
-                About
-              </Link>
+            <li
+              className="relative"
+              onMouseEnter={() => setIsDropdownOpen1(true)}
+              onMouseLeave={() => setIsDropdownOpen1(false)}
+            >
+              <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
+                Electricity
+                <svg className={`w-4 h-4 transition-transform ${isDropdownOpen1 ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isDropdownOpen1 && (
+                <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
+                  <Link
+                    to="/locations/data-center"
+                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
+                  >
+                   Grid
+                  </Link>
+                  <Link
+                    to="/locations/farms"
+                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
+                  >
+                    Data Center
+                  </Link>
+            
+                </div>
+              )}
             </li>
+
+            <li
+              className="relative"
+              onMouseEnter={() => setIsDropdownOpen2(true)}
+              onMouseLeave={() => setIsDropdownOpen2(false)}
+            >
+              <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
+                Waste
+                <svg className={`w-4 h-4 transition-transform ${isDropdownOpen2 ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isDropdownOpen2 && (
+                <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
+                  <Link
+                    to="/locations/data-center"
+                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
+                  >
+                   Mutation
+                  </Link>
+                  <Link
+                    to="/locations/farms"
+                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
+                  >
+                    Soil Erosion
+                  </Link>
+            
+                </div>
+              )}
+            </li>
+
             <li>
               <Link
                 to="/contact"
