@@ -245,6 +245,48 @@ const ChinStateIntro = () => {
         </div>
       </div>
 
+
+      {/* 3D Model */}
+<div className="bg-gray-100 py-12 md:py-16">
+  <div className="max-w-6xl mx-auto px-4">
+
+    {/* Box Container */}
+    <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-200">
+
+      <div className="text-center mb-8">
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-3">
+          3D Model
+        </h2>
+        <p className="text-gray-600">
+          Interactive visualization of the system structure
+        </p>
+      </div>
+
+      {/* Image */}
+      <div className="flex justify-center">
+        <img
+          src="https://vid.alarabiya.net/images/2019/08/18/103055a6-c86c-4282-b0f8-91b6c22fff41/103055a6-c86c-4282-b0f8-91b6c22fff41.jpg?crop=4:3&width=1200"
+          alt="3D model preview"
+          className="rounded-xl shadow-lg w-full max-w-3xl object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+  
+
+
+
+
+
+
       {/* Why SMR is the Solution */}
       <div className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -68,38 +68,62 @@ const SoilErosion = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-linear-to-br from-indigo-900 via-purple-800 to-blue-700 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+  <div className="absolute inset-0 bg-black opacity-30"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <Atom className="w-12 h-12 text-indigo-300" />
-              <span className="text-indigo-300 font-bold uppercase tracking-wider text-sm">
-                Nuclear Soil Engineering
-              </span>
-            </div>
-            
-            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Nuclear Soil Erosion Control &<br />
-              <span className="text-indigo-300">Land Stabilization</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl mb-8">
-              Advanced nuclear science applied to soil conservation using isotope tracking, radiation stabilization,
-              and nuclear moisture sensing for precise, long-term erosion prevention.
-            </p>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
-                Request Nuclear Soil Scan
-              </a>
-              <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-indigo-900 text-white font-bold py-4 px-8 rounded-lg transition">
-                Explore Nuclear Methods
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Text Content */}
+    <div className="max-w-3xl">
+      <div className="flex items-center gap-4 mb-8">
+        <Atom className="w-12 h-12 text-indigo-300" />
+        <span className="text-indigo-300 font-bold uppercase tracking-wider text-sm">
+          Nuclear Soil Engineering
+        </span>
+      </div>
+            
+      <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Nuclear Soil Erosion Control &<br />
+        <span className="text-indigo-300">Land Stabilization</span>
+      </h1>
+            
+      <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl mb-8">
+        Advanced nuclear science applied to soil conservation using isotope tracking, radiation stabilization,
+        and nuclear moisture sensing for precise, long-term erosion prevention.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
+          Request Nuclear Soil Scan
+        </a>
+        <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-indigo-900 text-white font-bold py-4 px-8 rounded-lg transition">
+          Explore Nuclear Methods
+        </a>
+      </div>
+    </div>
+
+    {/* Image Content */}
+    <div className="relative">
+      <div className="grid grid-cols-2 gap-4">
+        <img 
+          src="https://www.humboldtmfg.com/assets/blog-images/Nuke-Gauge.jpg" 
+          alt="Nuclear soil testing"
+          className="rounded-2xl shadow-2xl object-cover h-56 w-full"
+        />
+        <img 
+          src="https://eos.org/wp-content/uploads/2020/11/agriculture-tunisia.jpg" 
+          alt="Isotope soil analysis"
+          className="rounded-2xl shadow-2xl object-cover h-56 w-full"
+        />
+        <img 
+          src="https://www.iaea.org/sites/default/files/nuclear_explained_soil_erosion_frns.png" 
+          alt="Gamma ray soil scanning"
+          className="rounded-2xl shadow-2xl object-cover h-56 w-full col-span-2"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* Solutions Grid */}
       <section className="py-24 bg-white">

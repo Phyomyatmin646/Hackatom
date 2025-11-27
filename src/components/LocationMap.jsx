@@ -8,15 +8,16 @@ const LocationMap = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
         {/* Map Image */}
         <div className="lg:col-span-2">
-          <img
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=400&fit=crop"
-            alt="Chin State Map Location"
-            className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-lg shadow-lg"
-            onError={(e) => {
-              e.target.src = 'https://via.placeholder.com/800x400/1e3a8a/ffffff?text=Chin+State+Map+Near+Kalay+City+River';
-            }}
-          />
-        </div>
+ 
+<iframe
+  title="Wide Map of Chin/Shan State"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d377497.123456!2d94.018647!3d23.197569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smm!4v1700000000000&markers=23.197569,94.018647"
+  className="w-full h-[300px] md:h-[410px] rounded-lg shadow-lg"
+  loading="lazy"
+></iframe>
+
+</div>
+
 
         {/* Location Info */}
         <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg">
@@ -29,7 +30,7 @@ const LocationMap = () => {
               <span className="text-gray-700 text-sm md:text-base">Chin State, Myanmar</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-xl md:text-2xl">🏙️</span>
+              <span className="text-xl md:text-2xl">🏙</span>
               <span className="text-gray-700 text-sm md:text-base">Near Kalay City</span>
             </li>
             <li className="flex items-start gap-3">

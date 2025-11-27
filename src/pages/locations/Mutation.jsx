@@ -67,39 +67,65 @@ const Mutation = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-green-900 via-emerald-800 to-teal-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
+     {/* Hero Section */}
+<section className="relative bg-linear-to-br from-green-900 via-emerald-800 to-teal-800 text-white overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-30"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-8">
-              <Atom className="w-12 h-12 text-green-300" />
-              <span className="text-green-300 font-bold uppercase tracking-wider text-sm">
-                Nuclear Agriculture Technology
-              </span>
-            </div>
-            
-            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Nuclear Mutation Breeding<br />
-              <span className="text-green-300">For Plants & Animals</span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl mb-8">
-              Advanced nuclear techniques using controlled radiation to create stronger, higher-yield, and climate-resilient crops 
-              and healthier livestock without genetic modification.
-            </p>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
-                Research Collaboration
-              </a>
-              <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-green-900 text-white font-bold py-4 px-8 rounded-lg transition">
-                Learn More
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Text Content */}
+    <div className="max-w-3xl">
+      <div className="flex items-center gap-4 mb-8">
+        <Atom className="w-12 h-12 text-green-300" />
+        <span className="text-green-300 font-bold uppercase tracking-wider text-sm">
+          Nuclear Agriculture Technology
+        </span>
+      </div>
+            
+      <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        Nuclear Mutation Breeding<br />
+        <span className="text-green-300">For Plants & Animals</span>
+      </h1>
+            
+      <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl mb-8">
+        Advanced nuclear techniques using controlled radiation to create stronger, higher-yield, 
+        and climate-resilient crops and healthier livestock without genetic modification.
+      </p>
+
+      <div className="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
+          Research Collaboration
+        </a>
+        <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-green-900 text-white font-bold py-4 px-8 rounded-lg transition">
+          Learn More
+        </a>
+      </div>
+    </div>
+
+    {/* Image Content */}
+    <div className="relative">
+      <div className="grid grid-cols-2 gap-4">
+        <img 
+          src="https://www.iaea.org/sites/default/files/styles/landscape_medium/public/2025-09/plantmutationbreedingnuclearexplained.png.webp?itok=CBKidQjv" 
+          alt="Gamma irradiation of plant seeds"
+          className="rounded-2xl shadow-2xl object-cover h-56 w-full"
+        />
+        <img 
+          src="https://www.iaea.org/sites/default/files/indonesias_national_nuclear_energy_agency_batan_use_irradiation_plant_breeding.jpg" 
+          alt="Mutation-bred crops in field trials"
+          className="rounded-2xl shadow-2xl object-cover h-56 w-full"
+        />
+        <img 
+          src="https://media.4-paws.org/1/a/b/4/1ab49d54b09acebe4faf0d95225ebe1c7e98463d/Chickens_Scandinavia_JMcArthur_2017-4134-2882x1996-1920x1330.jpg" 
+          alt="Nuclear agriculture research laboratory"
+          className="rounded-2xl shadow-2xl object-cover h-56 w-full col-span-2"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       {/* Key Features Grid */}
       <section className="py-24 bg-white">

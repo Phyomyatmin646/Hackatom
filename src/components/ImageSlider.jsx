@@ -6,35 +6,35 @@ const ImageSlider = () => {
   const slides = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1200&h=600&fit=crop',
+      image: 'https://destinationsmagazine.com/wp-content/uploads/2017/09/Chin-State-iStock-522624583-DG-Photography-1500x1000.jpg',
       alt: 'SNR Reactor Overview',
-      title: 'Clean Energy for Agriculture',
-      subtitle: 'Powering sustainable farming in Chin State'
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&h=600&fit=crop',
-      alt: 'Agriculture Field',
-      title: 'Modern Farming Solutions',
-      subtitle: 'Supporting local agricultural communities'
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&h=600&fit=crop',
-      alt: 'Chin State Landscape',
       title: 'Beautiful Chin State',
       subtitle: 'Located near Kalay City'
     },
     {
+      id: 2,
+      image: 'https://cms-image-bucket-production-ap-northeast-1-a7d2.s3.ap-northeast-1.amazonaws.com/images/4/6/5/2/40532564-3-eng-GB/Cropped-16534901742017-07-11T230511Z_1560064324_RC1537968C10_RTRMADP_3_MYANMAR-ENERGY.JPG',
+      alt: 'Agriculture Field',
+      title: 'The Power Barrier',
+      subtitle: 'Chin State Energy Blackout'
+    },
+    {
+      id: 3,
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgdOdAYQzArL3c70jL_P-dpxeLeF0JWVQLqJnY-4_YKzlmardxQpOVK09xCujYjyrsq6Y&usqp=CAU',
+      alt: 'Chin State Landscape',
+      title: 'Modern Farming Solutions',
+      subtitle: 'Located near Kalay City'
+    },
+    {
       id: 4,
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&h=600&fit=crop',
+      image: 'https://images.squarespace-cdn.com/content/v1/575fb39762cd94c2d69dc556/1494428018223-QW6AEJNIIAXZ882V31MP/Banner+image.jpg?format=2500w',
       alt: 'Advanced Technology',
       title: 'Advanced Technology',
       subtitle: 'Cutting-edge nuclear solutions'
     },
     {
       id: 5,
-      image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=1200&h=600&fit=crop',
+      image: 'https://myanmarcs.focuscoregroup.com/wp-content/uploads/2016/02/shutterstock_226031854.jpg',
       alt: 'Local Community',
       title: 'Community Development',
       subtitle: 'Building a brighter future together'
