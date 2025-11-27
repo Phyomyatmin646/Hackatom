@@ -172,7 +172,7 @@ const ChinStateIntro = () => {
           {/* Map Image */}
           <div className="relative">
             <img
-              src="src/map.png"
+              src="/images/map.png"
               alt="Chin State Location in Myanmar"
               className="w-full max-w-md h-64 object-cover mx-auto rounded-lg shadow-lg"
             />

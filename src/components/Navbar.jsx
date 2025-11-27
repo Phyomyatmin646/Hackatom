@@ -157,13 +157,13 @@ const Navbar = () => {
 
             <li
               className="relative"
-              onMouseEnter={() => handleMouseEnter('waste')}
+              onMouseEnter={() => handleMouseEnter('radiation')}
               onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
-                Waste
+                Radiation
                 <svg
-                  className={`w-4 h-4 transition-transform ${openDropdown === 'waste' ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'radiation' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -172,7 +172,7 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              {openDropdown === 'waste' && (
+              {openDropdown === 'radiation' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
                   <Link
                     to="/locations/mutation"

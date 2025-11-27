@@ -1,99 +1,99 @@
 import React from 'react';
-import { Leaf, Zap, Shield, TrendingUp, Droplets, Atom } from 'lucide-react';
+import { Leaf, Zap, Shield, TrendingUp, Droplets, Atom, Sprout } from 'lucide-react';
 
 const Mutation = () => {
   const features = [
     {
       icon: Atom,
-      title: "Advanced Transmutation",
-      desc: "Utilizing innovative nuclear processes to convert agricultural waste into valuable resources",
+      title: "Radiation-Induced Mutation",
+      desc: "Controlled use of gamma rays and ion beams to create beneficial genetic variations in plants and animals",
       color: "text-blue-600"
     },
     {
       icon: Leaf,
-      title: "Biosolid Conversion",
-      desc: "Transform organic waste into nutrient-rich biosolids for soil enhancement",
+      title: "Crop Improvement",
+      desc: "Enhanced yield, disease resistance, climate tolerance, and nutritional quality through mutation breeding",
       color: "text-green-600"
     },
     {
+      icon: Sprout,
+      title: "Livestock Enhancement",
+      desc: "Improvement of growth rate, fertility, and disease resistance in animals using safe nuclear techniques",
+      color: "text-lime-600"
+    },
+    {
       icon: Droplets,
-      title: "Waste Water Treatment",
-      desc: "Advanced purification systems for agricultural runoff and processing water",
+      title: "Stress Tolerance",
+      desc: "Development of drought, flood, and salinity-resistant crop varieties",
       color: "text-cyan-600"
     },
     {
-      icon: TrendingUp,
-      title: "Resource Recovery",
-      desc: "Extract valuable minerals and organic compounds from waste streams",
-      color: "text-orange-600"
-    },
-    {
       icon: Shield,
-      title: "Safety Standards",
-      desc: "Full compliance with international environmental and health protocols",
+      title: "Safety & Regulation",
+      desc: "Strict compliance with IAEA and international biosafety standards for radiation use",
       color: "text-purple-600"
     },
     {
-      icon: Zap,
-      title: "Energy Generation",
-      desc: "Convert waste-to-energy through biogas and thermal processes",
-      color: "text-yellow-600"
+      icon: TrendingUp,
+      title: "Agricultural Productivity",
+      desc: "Higher yields and faster breeding cycles compared to conventional methods",
+      color: "text-orange-600"
     }
   ];
 
   const benefits = [
     {
-      metric: "95%",
-      label: "Waste Reduction",
-      description: "Convert up to 95% of agricultural waste into useful products"
+      metric: "3000+",
+      label: "Mutant Varieties",
+      description: "More than 3000 officially released mutant crop varieties worldwide"
     },
     {
-      metric: "50MW",
-      label: "Energy Recovery",
-      description: "Generate renewable energy from waste processing"
+      metric: "40%",
+      label: "Yield Increase",
+      description: "Average production improvement in mutation-bred crops"
     },
     {
       metric: "Zero",
-      label: "Landfill Impact",
-      description: "Eliminate waste going to landfills through circular economy"
+      label: "GM DNA Transfer",
+      description: "No foreign genes are introduced in mutation breeding"
     },
     {
-      metric: "3x",
-      label: "ROI",
-      description: "Triple return on investment through resource recovery"
+      metric: "2–3x",
+      label: "Faster Breeding",
+      description: "Compared to traditional cross-breeding methods"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-linear-to-br from-purple-900 via-indigo-800 to-blue-800 text-white overflow-hidden">
+      <section className="relative bg-linear-to-br from-green-900 via-emerald-800 to-teal-800 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-8">
-              <Atom className="w-12 h-12 text-purple-300" />
-              <span className="text-purple-300 font-bold uppercase tracking-wider text-sm">
-                Advanced Waste Solutions
+              <Atom className="w-12 h-12 text-green-300" />
+              <span className="text-green-300 font-bold uppercase tracking-wider text-sm">
+                Nuclear Agriculture Technology
               </span>
             </div>
             
             <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-              Waste Mutation &<br />
-              <span className="text-purple-300">Resource Transformation</span>
+              Nuclear Mutation Breeding<br />
+              <span className="text-green-300">For Plants & Animals</span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl mb-8">
-              Revolutionary waste-to-value technology converting agricultural and industrial waste streams into renewable energy, 
-              biosolids, and valuable chemical compounds through advanced mutation processes.
+              Advanced nuclear techniques using controlled radiation to create stronger, higher-yield, and climate-resilient crops 
+              and healthier livestock without genetic modification.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-purple-500 hover:bg-purple-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
-                Request Assessment
+              <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
+                Research Collaboration
               </a>
-              <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-purple-900 text-white font-bold py-4 px-8 rounded-lg transition">
+              <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-green-900 text-white font-bold py-4 px-8 rounded-lg transition">
                 Learn More
               </a>
             </div>
@@ -106,17 +106,17 @@ const Mutation = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-              Mutation Technology Platform
+              Mutation Breeding Technology Platform
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Six core technologies working in harmony to maximize waste conversion and resource recovery
+              Nuclear science applied safely to improve agriculture and food security
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
             {features.map((item, i) => (
-              <div key={i} className="group bg-linear-to-b from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-300">
-                <div className="inline-flex p-4 bg-gray-100 rounded-2xl mb-6 group-hover:bg-purple-100 transition">
+              <div key={i} className="group bg-linear-to-b from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-2xl hover:border-green-400 transition-all duration-300">
+                <div className="inline-flex p-4 bg-gray-100 rounded-2xl mb-6 group-hover:bg-green-100 transition">
                   <item.icon className={`w-12 h-12 ${item.color}`} />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
@@ -128,25 +128,25 @@ const Mutation = () => {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-24 bg-linear-to-r from-purple-800 to-indigo-900 text-white">
+      <section className="py-24 bg-linear-to-r from-green-800 to-emerald-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              Performance Metrics
+              Proven Global Impact
             </h2>
-            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
-              Industry-leading results in waste conversion and resource recovery
+            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+              Decades of successful application in agriculture and livestock development
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-10">
             {benefits.map((item, i) => (
               <div key={i} className="text-center">
-                <div className="text-5xl lg:text-6xl font-extrabold text-purple-300 mb-4">
+                <div className="text-5xl lg:text-6xl font-extrabold text-green-300 mb-4">
                   {item.metric}
                 </div>
                 <h3 className="text-2xl font-bold mb-3">{item.label}</h3>
-                <p className="text-purple-100 leading-relaxed">{item.description}</p>
+                <p className="text-green-100 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -157,45 +157,45 @@ const Mutation = () => {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 mb-16 text-center">
-            Mutation Process Flow
+            Nuclear Mutation Breeding Process
           </h2>
 
           <div className="space-y-8">
             {[
               {
                 step: "01",
-                title: "Waste Intake & Analysis",
-                desc: "Comprehensive characterization of incoming waste streams with real-time monitoring"
+                title: "Selection of Seeds & Specimens",
+                desc: "High-quality plant seeds and animal specimens are selected for mutation treatment"
               },
               {
                 step: "02",
-                title: "Pre-treatment & Sorting",
-                desc: "Advanced separation and preparation using AI-driven sorting systems"
+                title: "Controlled Radiation Exposure",
+                desc: "Gamma rays, X-rays, or ion beams induce beneficial genetic mutations"
               },
               {
                 step: "03",
-                title: "Mutation Processing",
-                desc: "Core transmutation process converting organic compounds into valuable products"
+                title: "Mutation Screening",
+                desc: "Thousands of variants are screened to identify desirable traits"
               },
               {
                 step: "04",
-                title: "Resource Extraction",
-                desc: "Recovery of biosolids, chemicals, and energy through multi-stage extraction"
+                title: "Field & Lab Testing",
+                desc: "Selected mutants undergo extensive biological and safety testing"
               },
               {
                 step: "05",
-                title: "Quality Assurance",
-                desc: "Rigorous testing and certification of all output materials"
+                title: "Stabilization & Breeding",
+                desc: "Successful mutants are stabilized and multiplied through breeding"
               },
               {
                 step: "06",
-                title: "Distribution & Use",
-                desc: "Delivery of recovered resources to agriculture, energy, and industrial sectors"
+                title: "Agricultural Deployment",
+                desc: "Improved crop varieties and livestock are released for commercial use"
               }
             ].map((item, i) => (
               <div key={i} className="flex gap-8 items-start pb-8 border-b border-gray-200 last:border-0">
                 <div className="shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-purple-500 text-white font-bold text-lg">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-green-500 text-white font-bold text-lg">
                     {item.step}
                   </div>
                 </div>
@@ -210,14 +210,14 @@ const Mutation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-linear-to-r from-purple-700 to-indigo-800 text-white">
+      <section className="py-16 bg-linear-to-r from-green-700 to-emerald-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Waste?</h2>
+          <h2 className="text-4xl font-bold mb-6">Advancing Agriculture with Nuclear Science</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Partner with us to implement advanced mutation technology and turn waste into valuable resources
+            Partner with us to implement nuclear mutation breeding and strengthen global food security
           </p>
-          <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-purple-900 font-bold py-4 px-10 rounded-lg transition transform hover:scale-105 shadow-xl">
-            Schedule Consultation
+          <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-green-900 font-bold py-4 px-10 rounded-lg transition transform hover:scale-105 shadow-xl">
+            Join the Research Program
           </a>
         </div>
       </section>
