@@ -12,7 +12,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-[70px]">
           {/* Logo */}
-          <Link to="/" className="text-xl md:text-2xl font-bold text-blue-900 hover:text-blue-700 transition-colors">
+          <Link
+            to="/"
+            className="text-xl md:text-2xl font-bold text-blue-900 hover:text-blue-700 transition-colors"
+          >
             UF<sub>6</sub>
           </Link>
 
@@ -57,12 +60,13 @@ const Navbar = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
-<<<<<<< HEAD
-                Agriculture
-=======
                 Agricultural
->>>>>>> 5c6b1eb0411420183d4753d294b87f83d284f9c3
-                <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -73,19 +77,19 @@ const Navbar = () => {
                     to="/locations/data-center"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                   Hakka
+                    Hakka
                   </Link>
                   <Link
                     to="/locations/farms"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                  Falam
+                    Falam
                   </Link>
                   <Link
                     to="/locations/operators"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                  Thantlang
+                    Thantlang
                   </Link>
                   <Link
                     to="/locations/operators"
@@ -103,6 +107,7 @@ const Navbar = () => {
               )}
             </li>
 
+            {/* Other Dropdowns */}
             <li
               className="relative"
               onMouseEnter={() => setIsDropdownOpen1(true)}
@@ -110,7 +115,12 @@ const Navbar = () => {
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Electricity
-                <svg className={`w-4 h-4 transition-transform ${isDropdownOpen1 ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className={`w-4 h-4 transition-transform ${isDropdownOpen1 ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -121,7 +131,7 @@ const Navbar = () => {
                     to="/locations/data-center"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                   Grid
+                    Grid
                   </Link>
                   <Link
                     to="/locations/farms"
@@ -129,7 +139,6 @@ const Navbar = () => {
                   >
                     Data Center
                   </Link>
-            
                 </div>
               )}
             </li>
@@ -141,7 +150,12 @@ const Navbar = () => {
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Waste
-                <svg className={`w-4 h-4 transition-transform ${isDropdownOpen2 ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className={`w-4 h-4 transition-transform ${isDropdownOpen2 ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
@@ -152,7 +166,7 @@ const Navbar = () => {
                     to="/locations/data-center"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
-                   Mutation
+                    Mutation
                   </Link>
                   <Link
                     to="/locations/farms"
@@ -160,7 +174,6 @@ const Navbar = () => {
                   >
                     Soil Erosion
                   </Link>
-            
                 </div>
               )}
             </li>
@@ -195,7 +208,12 @@ const Navbar = () => {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 >
                   Locations
-                  <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
