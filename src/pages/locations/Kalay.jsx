@@ -27,7 +27,7 @@ const farms = [
   },
 ];
 
-const Farms = () => {
+const Kalay = () => {
   const [selectedFarm, setSelectedFarm] = useState(null);
 
   const farmSectionRef = useRef(null);
@@ -214,4 +214,4 @@ const Farms = () => {
   );
 };
 
-export default Farms;
+export default Kalay;

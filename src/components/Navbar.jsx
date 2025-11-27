@@ -12,12 +12,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-[70px]">
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-xl md:text-2xl font-bold text-blue-900 hover:text-blue-700 transition-colors"
-          >
-            UF<sub>6</sub>
-          </Link>
+          <Link to="/" className="flex items-center gap-2">
+  <img
+    src="/images/viber_image_2025-11-28_02-57-25-610.jpg"
+    alt="UF6 Logo"
+    className="h-15 w-15 rounded-full border-2 border-blue-500" // border example
+  />
+  <span className="text-xl md:text-2xl font-bold text-blue-900">
+    UF<sub>6</sub>
+  </span>
+</Link>
+
 
           {/* Mobile menu button */}
           <button
@@ -92,13 +97,13 @@ const Navbar = () => {
                     Thantlang
                   </Link>
                   <Link
-                    to="/locations/operators"
+                    to="/locations/Kalay"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
                     Tedim
                   </Link>
                   <Link
-                    to="/locations/operators"
+                    to="/locations/Main-longyi"
                     className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
                   >
                     Kalay

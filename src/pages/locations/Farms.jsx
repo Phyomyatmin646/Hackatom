@@ -86,8 +86,7 @@ const Farms = () => {
           </h1>
 
           <p className="text-blue-100 text-lg font-semibold">
-            Falam is a cool, high-altitude mountain city and the capital of Chin
-            State.
+           Falam is a cool, mountainous town in Chin State known for its step landscapes,scenic views and strong Chin cultural traditions.Population:Approx~12,000
           </p>
         </div>
       </div>
@@ -102,13 +101,10 @@ const Farms = () => {
                 Agricultural Excellence
               </h2>
               <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                Our network of partner farms across Chin State benefits from
-                reliable, clean energy provided by our SNR facility. These
-                farms showcase modern agricultural practices powered by
-                sustainable nuclear energy.
+                Falam’s agriculture needs include improved irrigation, modern farming tools, and support for cold-climate crops suited to its steep, cool terrain. Better storage facilities and stronger road access are also essential to help farmers reduce losses and reach wider markets.
               </p>
 
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <h3 className="text-lg md:text-xl font-semibold text-blue-900">
                   Farm Services
                 </h3>
@@ -144,7 +140,7 @@ const Farms = () => {
                     </span>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
 
             {/* Image */}
