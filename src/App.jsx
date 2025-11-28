@@ -3,15 +3,18 @@ import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
-import Location from './pages/location.jsx';
-import DataCenter from './pages/locations/DataCenter.jsx';
-import Farms from './pages/locations/Farms.jsx';
-import Operators from './pages/locations/Operators.jsx';
-import Kalay from './pages/locations/Kalay.jsx';
-import MainLongyi from './pages/locations/Main-longyi.jsx';
-import Grid from './pages/locations/Grid.jsx';
-import Mutation from './pages/locations/Mutation.jsx';
-import SoilErosion from './pages/locations/SoilErosion.jsx';
+import Location from './pages/location/location.jsx';
+import DataCenter from './pages/electricity/DataCenter.jsx';
+import Grid from './pages/electricity/Grid.jsx';
+import LocationDataCenter from './pages/agriculture/DataCenter.jsx';
+import Farms from './pages/agriculture/Farms.jsx';
+import Operators from './pages/agriculture/Operators.jsx';
+import Kalay from './pages/agriculture/Kalay.jsx';
+import MainLongyi from './pages/agriculture/Main-longyi.jsx';
+import LocationGrid from './pages/agriculture/Grid.jsx';
+import Mutation from './pages/agriculture/Mutation.jsx';
+import SoilErosion from './pages/agriculture/SoilErosion.jsx';
+import Htantlan from './pages/agriculture/htantlan.jsx';
 
 function App() {
   return (
@@ -22,16 +25,17 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/location" element={<Location />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/locations/data-center" element={<DataCenter />} />
-        <Route path="/locations/farms" element={<Farms />} />
-        <Route path="/locations/operators" element={<Operators />} />
-        <Route path="/locations/thantlang" element={<Operators />} />
-        <Route path="/locations/tedim" element={<Operators />} />
-        <Route path="/locations/kalay" element={<Kalay />} />
-        <Route path="/locations/main-longyi" element={<MainLongyi />} />
-        <Route path="/locations/grid" element={<Grid />} />
-        <Route path="/locations/mutation" element={<Mutation />} />
-        <Route path="/locations/soil-erosion" element={<SoilErosion />} />
+        <Route path="/grid" element={<Grid />} />
+        <Route path="/data-center" element={<DataCenter />} />
+        <Route path="/agriculture/data-center" element={<LocationDataCenter />} />
+        <Route path="/agriculture/farms" element={<Farms />} />
+        <Route path="/agriculture/operators" element={<Operators />} />
+        <Route path="/agriculture/thantlang" element={<Htantlan />} />
+        <Route path="/agriculture/kalay" element={<Kalay />} />
+        <Route path="/agriculture/tedim" element={<MainLongyi />} />
+        <Route path="/agriculture/grid" element={<LocationGrid />} />
+        <Route path="/radiation/mutation" element={<Mutation />} />
+        <Route path="/radiation/soil-erosion" element={<SoilErosion />} />
       </Routes>
     </div>
   );

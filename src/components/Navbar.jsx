@@ -1,11 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isDropdownOpen1, setIsDropdownOpen1] = useState(false);
-  const [isDropdownOpen2, setIsDropdownOpen2] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // desktop hover dropdown
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // mobile menu toggle
+  const [isAggOpen, setIsAggOpen] = useState(false); // mobile Agricultural dropdown
+  const [isElecOpen, setIsElecOpen] = useState(false); // mobile Electricity dropdown
+  const [isRadOpen, setIsRadOpen] = useState(false); // mobile Radiation dropdown
+
+  const dropdownTimeout = useRef(null);
+
+  const handleMouseEnter = (dropdown) => {
+    if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
+    setOpenDropdown(dropdown);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => setOpenDropdown(null), 200);
+  };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
@@ -58,16 +70,17 @@ const Navbar = () => {
               </Link>
             </li>
 
-            {/* Dropdown */}
+            {/* Desktop Dropdowns */}
+            {/* Agricultural */}
             <li
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => handleMouseEnter('agricultural')}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Agricultural
                 <svg
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'agricultural' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -75,53 +88,27 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-
-              {isDropdownOpen && (
+              {openDropdown === 'agricultural' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
-                  <Link
-                    to="/locations/data-center"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Hakka
-                  </Link>
-                  <Link
-                    to="/locations/farms"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Falam
-                  </Link>
-                  <Link
-                    to="/locations/operators"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Thantlang
-                  </Link>
-                  <Link
-                    to="/locations/Kalay"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Tedim
-                  </Link>
-                  <Link
-                    to="/locations/Main-longyi"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Kalay
-                  </Link>
+                  <Link to="/agriculture/data-center" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Hakka</Link>
+                  <Link to="/agriculture/farms" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Falam</Link>
+                  <Link to="/agriculture/thantlang" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Thantlang</Link>
+                  <Link to="/agriculture/tedim" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Tedim</Link>
+                  <Link to="/agriculture/kalay" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Kalay</Link>
                 </div>
               )}
             </li>
 
-            {/* Other Dropdowns */}
+            {/* Electricity */}
             <li
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen1(true)}
-              onMouseLeave={() => setIsDropdownOpen1(false)}
+              onMouseEnter={() => handleMouseEnter('electricity')}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
                 Electricity
                 <svg
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen1 ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'electricity' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -129,34 +116,24 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-
-              {isDropdownOpen1 && (
+              {openDropdown === 'electricity' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
-                  <Link
-                    to="/locations/data-center"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Grid
-                  </Link>
-                  <Link
-                    to="/locations/farms"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Data Center
-                  </Link>
+                  <Link to="/grid" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Grid</Link>
+                  <Link to="/data-center" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Data Center</Link>
                 </div>
               )}
             </li>
 
+            {/* Radiation */}
             <li
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen2(true)}
-              onMouseLeave={() => setIsDropdownOpen2(false)}
+              onMouseEnter={() => handleMouseEnter('radiation')}
+              onMouseLeave={handleMouseLeave}
             >
               <button className="px-3 py-2 lg:px-4 rounded-md text-blue-900 font-medium hover:bg-blue-100 transition-colors flex items-center gap-1">
-                Waste
+                Radiation
                 <svg
-                  className={`w-4 h-4 transition-transform ${isDropdownOpen2 ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform ${openDropdown === 'radiation' ? 'rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -164,25 +141,15 @@ const Navbar = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-
-              {isDropdownOpen2 && (
+              {openDropdown === 'radiation' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
-                  <Link
-                    to="/locations/data-center"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Mutation
-                  </Link>
-                  <Link
-                    to="/locations/farms"
-                    className="block px-4 py-2 text-blue-900 hover:bg-blue-100 transition-colors"
-                  >
-                    Soil Erosion
-                  </Link>
+                  <Link to="/radiation/mutation" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Mutation</Link>
+                  <Link to="/radiation/soil-erosion" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Soil Erosion</Link>
                 </div>
               )}
             </li>
 
+            {/* Contact */}
             <li>
               <Link
                 to="/contact"
@@ -198,72 +165,66 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden pb-4 border-t border-gray-200">
             <div className="flex flex-col pt-4 space-y-1">
-              <Link
-                to="/"
-                className="px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
 
-              {/* Mobile Dropdown */}
+              <Link to="/" className="px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+              <Link to="/Location" className="px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Location</Link>
+
+              {/* Agricultural Mobile Dropdown */}
               <div>
                 <button
-                  className="w-full px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md transition-colors flex items-center justify-between"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="w-full px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md flex justify-between items-center"
+                  onClick={() => setIsAggOpen(!isAggOpen)}
                 >
-                  Locations
-                  <svg
-                    className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  Agricultural
+                  <span className={`transform transition ${isAggOpen ? "rotate-180" : ""}`}>⌄</span>
                 </button>
-
-                {isDropdownOpen && (
-                  <div className="pl-4 mt-1 space-y-1">
-                    <Link
-                      to="/locations/data-center"
-                      className="block px-4 py-2 text-blue-800 hover:bg-blue-100 rounded-md transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Data Center
-                    </Link>
-                    <Link
-                      to="/locations/farms"
-                      className="block px-4 py-2 text-blue-800 hover:bg-blue-100 rounded-md transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Farms
-                    </Link>
-                    <Link
-                      to="/locations/operators"
-                      className="block px-4 py-2 text-blue-800 hover:bg-blue-100 rounded-md transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Operators
-                    </Link>
+                {isAggOpen && (
+                  <div className="pl-6">
+                    <Link to="/agriculture/data-center" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Hakka</Link>
+                    <Link to="/agriculture/farms" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Falam</Link>
+                    <Link to="/agriculture/thantlang" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Thantlang</Link>
+                    <Link to="/agriculture/tedim" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Tedim</Link>
+                    <Link to="/agriculture/operators" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Kalay</Link>
                   </div>
                 )}
               </div>
 
-              <Link
-                to="/about"
-                className="px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                to="/contact"
-                className="px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
+              {/* Electricity Mobile Dropdown */}
+              <div>
+                <button
+                  className="w-full px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md flex justify-between items-center"
+                  onClick={() => setIsElecOpen(!isElecOpen)}
+                >
+                  Electricity
+                  <span className={`transform transition ${isElecOpen ? "rotate-180" : ""}`}>⌄</span>
+                </button>
+                {isElecOpen && (
+                  <div className="pl-6">
+                    <Link to="/grid" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Grid</Link>
+                    <Link to="/data-center" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Data Center</Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Radiation Mobile Dropdown */}
+              <div>
+                <button
+                  className="w-full px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md flex justify-between items-center"
+                  onClick={() => setIsRadOpen(!isRadOpen)}
+                >
+                  Radiation
+                  <span className={`transform transition ${isRadOpen ? "rotate-180" : ""}`}>⌄</span>
+                </button>
+                {isRadOpen && (
+                  <div className="pl-6">
+                    <Link to="/agriculture/mutation" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Mutation</Link>
+                    <Link to="/agriculture/soil-erosion" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Soil Erosion</Link>
+                  </div>
+                )}
+              </div>
+
+              <Link to="/contact" className="px-4 py-2 text-blue-900 font-medium hover:bg-blue-100 rounded-md" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+
             </div>
           </div>
         )}
