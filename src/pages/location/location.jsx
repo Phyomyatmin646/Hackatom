@@ -16,7 +16,7 @@ import {
 import { Line } from 'react-chartjs-2';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import MyModel from "../three/MyModel";
+import MyModel from "../../three/MyModel";
 
 // Register Chart.js components
 ChartJS.register(
