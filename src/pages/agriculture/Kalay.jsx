@@ -73,7 +73,7 @@ const Kalay = () => {
 
         <div className="relative z-10 text-center text-white px-6 animate-fadeInUp">
           <h1 className="flex items-center justify-center gap-2 text-5xl md:text-6xl font-bold mb-4">
-            Kaly
+            Kalay
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -86,7 +86,7 @@ const Kalay = () => {
           </h1>
 
           <p className="text-blue-100 text-lg font-semibold">
-            Kaly is a cool, high-altitude mountain city and the capital of Chin
+            Kalay is a cool, high-altitude mountain city and the capital of Chin
             State.
           </p>
         </div>
@@ -150,7 +150,7 @@ const Kalay = () => {
             {/* Image */}
             <div className="scroll-animate opacity-0">
               <img
-                src="/images/2.jpg"
+                src="/images/image.png"
                 alt="Partner Farms"
                 className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-lg shadow-lg"
                 onError={(e) => {

@@ -150,7 +150,7 @@ const MainLongyi = () => {
             {/* Image */}
             <div className="scroll-animate opacity-0">
               <img
-                src="/images/2.jpg"
+                src="/images/hospital.png"
                 alt="Partner Farms"
                 className="w-full h-[250px] sm:h-[300px] md:h-[400px] object-cover rounded-lg shadow-lg"
                 onError={(e) => {
