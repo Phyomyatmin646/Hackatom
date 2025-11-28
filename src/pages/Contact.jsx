@@ -61,7 +61,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 text-sm md:text-base">Email</h3>
-                    <p className="text-gray-600 text-sm md:text-base">info@snragriculture.mm</p>
+                    <p className="text-gray-600 text-sm md:text-base">info@uf6team.com</p>
                   </div>
                 </div>
 
@@ -73,7 +73,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 text-sm md:text-base">Phone</h3>
-                    <p className="text-gray-600 text-sm md:text-base">+95 XXX XXX XXX</p>
+                    <p className="text-gray-600 text-sm md:text-base">+959 750 113 775</p>
                   </div>
                 </div>
 
@@ -91,15 +91,19 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map placeholder */}
+              {/* Map */}
               <div className="mt-8">
-                <img
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&h=300&fit=crop"
-                  alt="Contact Location"
-                  className="w-full h-[200px] md:h-[250px] object-cover rounded-lg shadow-md"
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/600x300/1e3a8a/ffffff?text=Contact+Us';
-                  }}
+                <iframe
+                  width="100%"
+                  height="250"
+                  frameBorder="0"
+                  style={{ border: 0, borderRadius: '0.5rem' }}
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59747.93606418969!2d94.0!3d22.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d0a1234567890a%3A0x9876543210fedcba!2sNear%20Kalay%20City%2C%20Chin%20State%2C%20Myanmar!5e0!3m2!1sen!2s!4v1234567890"
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Contact Location Map"
+                  className="rounded-lg shadow-md"
                 />
               </div>
             </div>
