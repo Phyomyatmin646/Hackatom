@@ -43,7 +43,7 @@ export default function Grid() {
               <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl">
                 <Slideshow
                   images={[
-                    { src: "/images/grib_substation.png", title: "33/11 kV Substation", caption: "Serving 100,000 households" },
+                    { src: "/images/grid_substation.png", title: "33/11 kV Substation", caption: "Serving 100,000 households" },
                     { src: "/images/grid_control.png", title: "Smart Grid Control Room", caption: "24/7 Monitoring" },
                     { src: "/images/transformer_bay.png", title: "Transformer Bay", caption: "Real-Time Load Management" },
                   ]}
