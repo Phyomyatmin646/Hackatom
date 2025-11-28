@@ -71,32 +71,32 @@ const Mutation = () => {
 <section className="relative bg-linear-to-br from-green-900 via-emerald-800 to-teal-800 text-white overflow-hidden">
   <div className="absolute inset-0 bg-black opacity-30"></div>
         
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
     {/* Text Content */}
     <div className="max-w-3xl">
       <div className="flex items-center gap-4 mb-8">
-        <Atom className="w-12 h-12 text-green-300" />
-        <span className="text-green-300 font-bold uppercase tracking-wider text-sm">
+        <Atom className="w-8 h-8 sm:w-12 sm:h-12 text-green-300" />
+        <span className="text-green-300 font-bold uppercase tracking-wider text-xs sm:text-sm">
           Nuclear Agriculture Technology
         </span>
       </div>
             
-      <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-4 sm:mb-6">
         Nuclear Mutation Breeding<br />
         <span className="text-green-300">For Plants & Animals</span>
       </h1>
             
-      <p className="text-xl lg:text-2xl text-gray-100 leading-relaxed max-w-2xl mb-8">
+      <p className="text-base sm:text-lg lg:text-xl text-gray-100 leading-relaxed max-w-2xl mb-6 sm:mb-8">
         Advanced nuclear techniques using controlled radiation to create stronger, higher-yield, 
         and climate-resilient crops and healthier livestock without genetic modification.
       </p>
 
-      <div className="flex flex-col sm:flex-row gap-4">
-        <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg transition transform hover:scale-105 shadow-xl">
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base rounded-lg transition transform hover:scale-105 shadow-xl">
           Research Collaboration
         </a>
-        <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-green-900 text-white font-bold py-4 px-8 rounded-lg transition">
+        <a href="/contact" className="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-green-900 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base rounded-lg transition">
           Learn More
         </a>
       </div>
@@ -104,7 +104,7 @@ const Mutation = () => {
 
     {/* Image Content */}
     <div className="relative">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <img 
           src="https://www.iaea.org/sites/default/files/styles/landscape_medium/public/2025-09/plantmutationbreedingnuclearexplained.png.webp?itok=CBKidQjv" 
           alt="Gamma irradiation of plant seeds"
@@ -128,25 +128,25 @@ const Mutation = () => {
 
 
       {/* Key Features Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Mutation Breeding Technology Platform
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Nuclear science applied safely to improve agriculture and food security
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {features.map((item, i) => (
-              <div key={i} className="group bg-linear-to-b from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:shadow-2xl hover:border-green-400 transition-all duration-300">
-                <div className="inline-flex p-4 bg-gray-100 rounded-2xl mb-6 group-hover:bg-green-100 transition">
-                  <item.icon className={`w-12 h-12 ${item.color}`} />
+              <div key={i} className="group bg-linear-to-b from-gray-50 to-white rounded-2xl p-6 sm:p-8 border border-gray-200 hover:shadow-2xl hover:border-green-400 transition-all duration-300">
+                <div className="inline-flex p-3 sm:p-4 bg-gray-100 rounded-2xl mb-4 sm:mb-6 group-hover:bg-green-100 transition">
+                  <item.icon className={`w-8 h-8 sm:w-12 sm:h-12 ${item.color}`} />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">{item.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -154,25 +154,25 @@ const Mutation = () => {
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-24 bg-linear-to-r from-green-800 to-emerald-900 text-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-linear-to-r from-green-800 to-emerald-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Proven Global Impact
             </h2>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-green-100 max-w-3xl mx-auto">
               Decades of successful application in agriculture and livestock development
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
             {benefits.map((item, i) => (
               <div key={i} className="text-center">
-                <div className="text-5xl lg:text-6xl font-extrabold text-green-300 mb-4">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-green-300 mb-2 sm:mb-4">
                   {item.metric}
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{item.label}</h3>
-                <p className="text-green-100 leading-relaxed">{item.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{item.label}</h3>
+                <p className="text-sm sm:text-base text-green-100 leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -180,9 +180,9 @@ const Mutation = () => {
       </section>
 
       {/* Process Overview */}
-      <section className="py-24 bg-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 mb-16 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-12 sm:mb-16 text-center">
             Nuclear Mutation Breeding Process
           </h2>
 
@@ -219,15 +219,15 @@ const Mutation = () => {
                 desc: "Improved crop varieties and livestock are released for commercial use"
               }
             ].map((item, i) => (
-              <div key={i} className="flex gap-8 items-start pb-8 border-b border-gray-200 last:border-0">
+              <div key={i} className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start pb-6 sm:pb-8 border-b border-gray-200 last:border-0">
                 <div className="shrink-0">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-lg bg-green-500 text-white font-bold text-lg">
+                  <div className="flex items-center justify-center h-12 w-12 sm:h-16 sm:w-16 rounded-lg bg-green-500 text-white font-bold text-sm sm:text-base lg:text-lg">
                     {item.step}
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 sm:mb-2">{item.title}</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -236,13 +236,13 @@ const Mutation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-linear-to-r from-green-700 to-emerald-800 text-white">
+      <section className="py-12 sm:py-16 bg-linear-to-r from-green-700 to-emerald-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Advancing Agriculture with Nuclear Science</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">Advancing Agriculture with Nuclear Science</h2>
+          <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
             Partner with us to implement nuclear mutation breeding and strengthen global food security
           </p>
-          <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-green-900 font-bold py-4 px-10 rounded-lg transition transform hover:scale-105 shadow-xl">
+          <a href="/contact" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-green-900 font-bold py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base rounded-lg transition transform hover:scale-105 shadow-xl">
             Join the Research Program
           </a>
         </div>
