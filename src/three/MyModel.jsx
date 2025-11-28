@@ -5,7 +5,7 @@ export default function MyModel() {
   return (
     <primitive 
       object={scene}
-      scale={25}
+      scale={10}
       position={[0, -1, 0]}
     />
   );

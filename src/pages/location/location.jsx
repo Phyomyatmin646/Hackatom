@@ -264,7 +264,7 @@ const ChinStateIntro = () => {
             </div>
 
             {/* Image */}
-            <div className="flex justify-center">
+            <div className="flex justify-center h-150">
               <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
                 <ambientLight intensity={0.5} />
                 <directionalLight position={[5, 5, 5]} />
