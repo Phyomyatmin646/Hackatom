@@ -138,8 +138,8 @@ const Navbar = () => {
               </button>
               {openDropdown === 'radiation' && (
                 <div className="absolute top-full left-0 mt-1 bg-white shadow-lg rounded-md min-w-[200px] py-2 border border-gray-100">
-                  <Link to="/locations/mutation" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Mutation</Link>
-                  <Link to="/locations/soil-erosion" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Soil Erosion</Link>
+                  <Link to="/radiation/mutation" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Mutation</Link>
+                  <Link to="/radiation/soil-erosion" className="block px-4 py-2 text-blue-900 hover:bg-blue-100">Soil Erosion</Link>
                 </div>
               )}
             </li>

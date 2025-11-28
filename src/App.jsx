@@ -34,8 +34,8 @@ function App() {
         <Route path="/agriculture/kalay" element={<Kalay />} />
         <Route path="/agriculture/main-longyi" element={<MainLongyi />} />
         <Route path="/agriculture/grid" element={<LocationGrid />} />
-        <Route path="/agriculture/mutation" element={<Mutation />} />
-        <Route path="/agriculture/soil-erosion" element={<SoilErosion />} />
+        <Route path="/radiation/mutation" element={<Mutation />} />
+        <Route path="/radiation/soil-erosion" element={<SoilErosion />} />
       </Routes>
     </div>
   );
