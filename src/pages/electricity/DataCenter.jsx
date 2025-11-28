@@ -45,9 +45,9 @@ export default function DataCenter() {
               <div className="w-full h-full rounded-3xl overflow-hidden shadow-2xl">
                 <Slideshow
                   images={[
-                    { src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop", title: "50 MW Critical Power", caption: "N+2 Redundancy • Lithium BESS" },
-                    { src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop", title: "Biogas Power Plant", caption: "100% Renewable Backup" },
-                    { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop", title: "Mission Control Room", caption: "24/7 Real-time Monitoring" },
+                    { src: "/images/datacenter3.png", title: "50 MW Critical Power", caption: "N+2 Redundancy • Lithium BESS" },
+                    { src: "/images/datacenter2.png", title: "Backup Data Center", caption: "100% Renewable Backup" },
+                    { src: "/images/datacenter1.png", title: "Mission Control Room", caption: "24/7 Real-time Monitoring" },
                   ]}
                 />
               </div>
@@ -93,8 +93,8 @@ export default function DataCenter() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "50 MW+", label: "Deployed Capacity" },
-              { value: "< 2 ms", label: "Failover Speed" },
-              { value: "PUE 1.15", label: "Industry Leading" },
+              { value: "Supplied Data Center", label: "219GWh/year" },
+              { value: "24/7", label: "Network uptime" },
               { value: "100%", label: "Renewable Blend" }
             ].map((stat, i) => (
               <div key={i} className="space-y-2">

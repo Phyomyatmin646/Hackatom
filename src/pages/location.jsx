@@ -14,6 +14,9 @@ import {
   Filler
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
+import MyModel from "../three/MyModel";
 
 // Register Chart.js components
 ChartJS.register(
@@ -118,9 +121,8 @@ const ChinStateIntro = () => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
             >
               <img
                 src={slide.image}
@@ -133,7 +135,7 @@ const ChinStateIntro = () => {
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
             </div>
           ))}
-          
+
           {/* Overlay Content */}
           <div className="absolute inset-0 flex items-end">
             <div className="w-full p-6 md:p-10">
@@ -157,9 +159,8 @@ const ChinStateIntro = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentSlide ? 'bg-white w-6' : 'bg-white/50'
-                }`}
+                className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-white w-6' : 'bg-white/50'
+                  }`}
               />
             ))}
           </div>
@@ -184,17 +185,17 @@ const ChinStateIntro = () => {
               About Chin State
             </h2>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Chin State is the least developed region in Myanmar, located in the western 
-              mountainous area bordering India and Bangladesh. With a population of approximately 
-              500,000 people spread across rugged terrain, the state faces significant 
+              Chin State is the least developed region in Myanmar, located in the western
+              mountainous area bordering India and Bangladesh. With a population of approximately
+              500,000 people spread across rugged terrain, the state faces significant
               infrastructure challenges.
             </p>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              The region's economy is primarily agricultural, with farmers growing rice, corn, 
-              and vegetables. However, lack of reliable electricity severely limits agricultural 
+              The region's economy is primarily agricultural, with farmers growing rice, corn,
+              and vegetables. However, lack of reliable electricity severely limits agricultural
               productivity, food preservation, and economic opportunities for local communities.
             </p>
-            
+
             {/* Quick Stats */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <div className="text-center p-3 bg-blue-50 rounded-lg">
@@ -232,7 +233,7 @@ const ChinStateIntro = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {challenges.map((challenge, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow border-t-4 border-red-500"
               >
@@ -247,40 +248,43 @@ const ChinStateIntro = () => {
 
 
       {/* 3D Model */}
-<div className="bg-gray-100 py-12 md:py-16">
-  <div className="max-w-6xl mx-auto px-4">
+      <div className="bg-gray-100 py-12 md:py-16">
+        <div className="max-w-6xl mx-auto px-4">
 
-    {/* Box Container */}
-    <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-200">
+          {/* Box Container */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-gray-200">
 
-      <div className="text-center mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-3">
-          3D Model
-        </h2>
-        <p className="text-gray-600">
-          Interactive visualization of the system structure
-        </p>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-3">
+                3D Model
+              </h2>
+              <p className="text-gray-600">
+                Interactive visualization of the system structure
+              </p>
+            </div>
+
+            {/* Image */}
+            <div className="flex justify-center">
+              <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
+                <ambientLight intensity={0.5} />
+                <directionalLight position={[5, 5, 5]} />
+
+                <MyModel />  {/* scaled + centered */}
+
+                <OrbitControls />
+              </Canvas>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      {/* Image */}
-      <div className="flex justify-center">
-        <img
-          src="https://vid.alarabiya.net/images/2019/08/18/103055a6-c86c-4282-b0f8-91b6c22fff41/103055a6-c86c-4282-b0f8-91b6c22fff41.jpg?crop=4:3&width=1200"
-          alt="3D model preview"
-          className="rounded-xl shadow-lg w-full max-w-3xl object-cover"
-        />
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
 
 
 
 
-  
 
 
 
@@ -300,8 +304,8 @@ const ChinStateIntro = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {smrBenefits.map((benefit, index) => (
-              <div 
+            {smrBenefits.map((benefit, index) => (
+              <div
                 key={index}
                 className="bg-linear-to-br from-blue-900 to-blue-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow text-white"
               >
@@ -319,7 +323,7 @@ const ChinStateIntro = () => {
                 🎯 Use the Site Selection Tool Below
               </h3>
               <p className="text-gray-600 mb-4">
-                Click on the map to evaluate potential SMR locations based on seismic safety, 
+                Click on the map to evaluate potential SMR locations based on seismic safety,
                 water access, grid proximity, and population buffers.
               </p>
               <div className="flex items-center justify-center gap-2 text-blue-600">
@@ -377,14 +381,14 @@ const getDistance = (latlng1, coord2) => {
   const lng1 = latlng1.lng || latlng1[1];
   const lat2 = coord2[0];
   const lng2 = coord2[1];
-  
+
   const R = 6371000;
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-            Math.sin(dLng/2) * Math.sin(dLng/2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng / 2) * Math.sin(dLng / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return R * c;
 };
 
@@ -393,19 +397,19 @@ const pointToLineDistance = (point, lineStart, lineEnd) => {
   const lng = point.lng;
   const x1 = lineStart[1], y1 = lineStart[0];
   const x2 = lineEnd[1], y2 = lineEnd[0];
-  
+
   const A = lng - x1;
   const B = lat - y1;
   const C = x2 - x1;
   const D = y2 - y1;
-  
+
   const dot = A * C + B * D;
   const lenSq = C * C + D * D;
   let param = lenSq !== 0 ? dot / lenSq : -1;
-  
+
   const xx = param < 0 ? x1 : param > 1 ? x2 : x1 + param * C;
   const yy = param < 0 ? y1 : param > 1 ? y2 : y1 + param * D;
-  
+
   return getDistance(point, [yy, xx]);
 };
 
@@ -413,11 +417,11 @@ const isPointInPolygon = (point, polygon) => {
   const x = point.lng;
   const y = point.lat;
   let inside = false;
-  
+
   for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
     const xi = polygon[i][1], yi = polygon[i][0];
     const xj = polygon[j][1], yj = polygon[j][0];
-    
+
     if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) {
       inside = !inside;
     }
@@ -464,7 +468,7 @@ const calculateSeismicScore = (latlng) => {
 const calculateWaterScore = (latlng) => {
   let minDist = Infinity;
   let nearestRiver = '';
-  
+
   for (const river of geoData.waterSources) {
     for (const coord of river.coords) {
       const dist = getDistance(latlng, coord);
@@ -474,9 +478,9 @@ const calculateWaterScore = (latlng) => {
       }
     }
   }
-  
+
   const distKm = minDist / 1000;
-  
+
   if (distKm < 20) return { score: 95, detail: `Excellent - ${distKm.toFixed(0)}km from ${nearestRiver}` };
   if (distKm < 50) return { score: 80, detail: `Good - ${distKm.toFixed(0)}km from ${nearestRiver}` };
   if (distKm < 100) return { score: 55, detail: `Moderate - ${distKm.toFixed(0)}km from water` };
@@ -486,7 +490,7 @@ const calculateWaterScore = (latlng) => {
 const calculateGridScore = (latlng) => {
   let minDist = Infinity;
   let nearestLine = '';
-  
+
   for (const line of geoData.gridLines) {
     for (let i = 0; i < line.coords.length - 1; i++) {
       const dist = pointToLineDistance(latlng, line.coords[i], line.coords[i + 1]);
@@ -496,9 +500,9 @@ const calculateGridScore = (latlng) => {
       }
     }
   }
-  
+
   const distKm = minDist / 1000;
-  
+
   if (distKm < 15) return { score: 95, detail: `Excellent - ${distKm.toFixed(0)}km from ${nearestLine}` };
   if (distKm < 40) return { score: 75, detail: `Good - ${distKm.toFixed(0)}km from grid` };
   if (distKm < 80) return { score: 50, detail: `Moderate - ${distKm.toFixed(0)}km from grid` };
@@ -508,22 +512,22 @@ const calculateGridScore = (latlng) => {
 const calculatePopulationScore = (latlng) => {
   let minDist = Infinity;
   let nearestCity = '';
-  
+
   for (const city of geoData.populationCenters) {
     const dist = getDistance(latlng, city.coords);
-    
+
     if (dist < city.radius) {
       return { score: 10, detail: `Inside ${city.name} exclusion zone - unsuitable`, inExclusionZone: true };
     }
-    
+
     if (dist < minDist) {
       minDist = dist;
       nearestCity = city.name;
     }
   }
-  
+
   const distKm = minDist / 1000;
-  
+
   if (distKm > 100) return { score: 95, detail: `Excellent buffer - ${distKm.toFixed(0)}km from ${nearestCity}` };
   if (distKm > 50) return { score: 80, detail: `Good buffer - ${distKm.toFixed(0)}km from ${nearestCity}` };
   if (distKm > 30) return { score: 60, detail: `Adequate buffer - ${distKm.toFixed(0)}km from ${nearestCity}` };
@@ -535,15 +539,15 @@ const calculateSiteScores = (latlng, weights) => {
   const water = calculateWaterScore(latlng);
   const grid = calculateGridScore(latlng);
   const population = calculatePopulationScore(latlng);
-  
+
   const totalWeight = weights.seismic + weights.water + weights.grid + weights.population;
   const overall = totalWeight > 0 ? Math.round(
     (seismic.score * weights.seismic +
-     water.score * weights.water +
-     grid.score * weights.grid +
-     population.score * weights.population) / totalWeight
+      water.score * weights.water +
+      grid.score * weights.grid +
+      population.score * weights.population) / totalWeight
   ) : 0;
-  
+
   return { overall, seismic, water, grid, population };
 };
 
@@ -556,50 +560,50 @@ const simulateDispatch = (config) => {
   let totalEmissions = 0;
   let totalSmrOutput = 0;
   let totalUnmet = 0;
-  
+
   for (let hour = 0; hour < 24; hour++) {
     // Myanmar demand curve
     const baseDemand = 350;
     const morningPeak = Math.exp(-Math.pow(hour - 9, 2) / 8) * 180;
     const eveningPeak = Math.exp(-Math.pow(hour - 20, 2) / 10) * 250;
     const demand = baseDemand + morningPeak + eveningPeak;
-    
+
     // Available generation
     const smrAvailable = config.smr * 0.92;
-    
+
     // Solar (tropical - good throughout day)
     const solarFactor = Math.max(0, Math.sin((hour - 5) * Math.PI / 14));
     const solarAvailable = config.solar * solarFactor * 0.75;
-    
+
     // Hydro (seasonal but steady - monsoon dependent)
     const hydroAvailable = config.hydro * 0.65;
-    
+
     // Dispatch in merit order
     let remaining = demand;
-    
+
     const smrOutput = Math.min(smrAvailable, remaining);
     remaining -= smrOutput;
-    
+
     const hydroOutput = Math.min(hydroAvailable, remaining);
     remaining -= hydroOutput;
-    
+
     const solarOutput = Math.min(solarAvailable, remaining);
     remaining -= solarOutput;
-    
+
     const gasOutput = Math.min(config.gas, remaining);
     remaining -= gasOutput;
-    
+
     // Costs ($/MWh)
     const hourCost = smrOutput * 35 + hydroOutput * 10 + solarOutput * 0 + gasOutput * 85;
     totalCost += hourCost;
-    
+
     // Emissions
     const hourEmissions = gasOutput * 0.45;
     totalEmissions += hourEmissions;
-    
+
     totalSmrOutput += smrOutput;
     totalUnmet += Math.max(0, remaining);
-    
+
     hourly.push({
       hour,
       demand,
@@ -610,7 +614,7 @@ const simulateDispatch = (config) => {
       unmet: Math.max(0, remaining)
     });
   }
-  
+
   return {
     hourly,
     totalCost,
@@ -634,7 +638,7 @@ const ScoreBar = ({ label, score, detail }) => {
         <span className="text-sm font-semibold" style={{ color }}>{score}</span>
       </div>
       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
-        <div 
+        <div
           className="h-full rounded-full transition-all duration-500"
           style={{ width: `${score}%`, backgroundColor: color }}
         />
@@ -648,33 +652,33 @@ const ScoreBar = ({ label, score, detail }) => {
 const SitePopupContent = ({ site, onRemove }) => {
   const { latlng, scores } = site;
   const recommendation = getRecommendation(scores.overall);
-  
+
   return (
     <div className="min-w-[280px]">
       <p className="text-xs text-gray-500 font-mono mb-2">
         📍 {latlng.lat.toFixed(4)}°N, {latlng.lng.toFixed(4)}°E
       </p>
-      
-      <div 
+
+      <div
         className="text-center p-4 rounded-lg mb-3"
-        style={{ 
-          background: `linear-gradient(135deg, ${getScoreColor(scores.overall)}, ${getScoreColor(scores.overall)}dd)` 
+        style={{
+          background: `linear-gradient(135deg, ${getScoreColor(scores.overall)}, ${getScoreColor(scores.overall)}dd)`
         }}
       >
         <p className="text-xs text-white/80 uppercase">Overall Suitability</p>
         <p className="text-4xl font-bold text-white">{scores.overall}</p>
         <p className="text-sm text-white/90">{getScoreLabel(scores.overall)} Site</p>
       </div>
-      
+
       <ScoreBar label="Seismic Safety" score={scores.seismic.score} detail={scores.seismic.detail} />
       <ScoreBar label="Water Access" score={scores.water.score} detail={scores.water.detail} />
       <ScoreBar label="Grid Proximity" score={scores.grid.score} detail={scores.grid.detail} />
       <ScoreBar label="Population Buffer" score={scores.population.score} detail={scores.population.detail} />
-      
+
       <div className={`p-3 rounded-lg text-sm border ${recommendation.className} mt-3`}>
         {recommendation.text}
       </div>
-      
+
       <button
         onClick={() => onRemove(site.id)}
         className="w-full mt-3 py-2 px-4 border border-gray-300 rounded-lg text-sm text-gray-600 hover:bg-gray-50 transition-colors"
@@ -738,7 +742,7 @@ const GridSimulationPanel = ({ sites = [] }) => {
     const yearlyData = [];
     const baseSMROutput = 300; // MW capacity
     const costPerMWh = 35;
-    
+
     for (let year = 0; year < years; year++) {
       const yearLabel = new Date().getFullYear() + year;
       // SMR output slightly increases with operational improvements
@@ -746,17 +750,17 @@ const GridSimulationPanel = ({ sites = [] }) => {
       // Consider site scores for location-based efficiency adjustments
       const locationEfficiency = (site.scores.overall / 100) * 0.15; // 0-15% efficiency bonus
       const adjustedOutput = smrOutput * (1 + locationEfficiency);
-      
+
       // Add realistic variability factors
       const maintenanceVariation = (Math.sin(year * 0.5) * 0.05); // Maintenance cycles every 4 years
       const weatherVariation = (Math.random() - 0.5) * 0.08; // Random weather/operational variance
       const coolingWaterAvailability = (Math.cos(year * 0.3) * 0.03); // Seasonal water availability
       const totalVariation = maintenanceVariation + weatherVariation + coolingWaterAvailability;
-      
+
       const finalOutput = adjustedOutput * (1 + totalVariation);
       const yearlyCost = finalOutput * 8760 * costPerMWh; // hours per year
       const co2Avoided = finalOutput * 8760 * 0.5; // kg per hour vs natural gas
-      
+
       yearlyData.push({
         year: yearLabel,
         output: Math.max(finalOutput, baseSMROutput * 0.70), // Floor at 70% to avoid unrealistic lows
@@ -765,7 +769,7 @@ const GridSimulationPanel = ({ sites = [] }) => {
         siteScore: site.scores.overall
       });
     }
-    
+
     return yearlyData;
   };
 
@@ -785,12 +789,12 @@ const GridSimulationPanel = ({ sites = [] }) => {
       alert('Please select at least one site to compare');
       return;
     }
-    
+
     const simResults = selectedSites.map(site => ({
       site,
       performance: simulateSitePerformance(site, 25)
     }));
-    
+
     setResults(simResults);
   };
 
@@ -813,10 +817,10 @@ const GridSimulationPanel = ({ sites = [] }) => {
     maintainAspectRatio: true,
     aspectRatio: 2,
     scales: {
-      x: { 
+      x: {
         title: { display: true, text: 'Year' }
       },
-      y: { 
+      y: {
         title: { display: true, text: 'Output (MW)' },
         beginAtZero: true
       }
@@ -854,9 +858,9 @@ const GridSimulationPanel = ({ sites = [] }) => {
                     <p className="text-sm font-medium">Site {idx + 1}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-gray-500">{site.latlng.lat.toFixed(2)}°N, {site.latlng.lng.toFixed(2)}°E</span>
-                      <span 
+                      <span
                         className="text-xs font-semibold px-2 py-1 rounded"
-                        style={{ 
+                        style={{
                           color: getScoreColor(site.scores.overall),
                           backgroundColor: getScoreColor(site.scores.overall) + '20'
                         }}
@@ -934,15 +938,15 @@ const GridSimulationPanel = ({ sites = [] }) => {
 };
 
 // Site Selection Panel Component
-const SiteSelectionPanel = ({ 
-  sites, 
-  weights, 
-  setWeights, 
-  layers, 
-  setLayers, 
-  showInstruction, 
-  handleMapClick, 
-  handleRemoveSite, 
+const SiteSelectionPanel = ({
+  sites,
+  weights,
+  setWeights,
+  layers,
+  setLayers,
+  showInstruction,
+  handleMapClick,
+  handleRemoveSite,
   handleClearAll,
   handleSiteFocus,
   focusedSite
@@ -1029,7 +1033,7 @@ const SiteSelectionPanel = ({
                 >
                   <span className="text-sm">Site {index + 1} ({site.latlng.lat.toFixed(2)}°N)</span>
                   <div className="flex items-center gap-2">
-                    <span 
+                    <span
                       className="font-semibold text-sm"
                       style={{ color: getScoreColor(site.scores.overall) }}
                     >
@@ -1062,7 +1066,7 @@ const SiteSelectionPanel = ({
             👆 Click on the map to place an SMR site and get suitability scores
           </div>
         )}
-        
+
         <MapContainer
           center={[19.5, 96.5]}
           zoom={6}
@@ -1072,7 +1076,7 @@ const SiteSelectionPanel = ({
             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
             attribution='&copy; OpenStreetMap contributors'
           />
-          
+
           <MapClickHandler onMapClick={handleMapClick} />
           {focusedSite && <MapViewController center={focusedSite.latlng} zoom={8} />}
 
@@ -1191,11 +1195,11 @@ const Location = ({ onSiteSelect, initialSites = [] }) => {
   const handleMapClick = useCallback((latlng) => {
     const id = `site-${Date.now()}`;
     const scores = calculateSiteScores(latlng, weights);
-    
+
     const newSite = { id, latlng, scores };
     setSites(prev => [...prev, newSite]);
     setShowInstruction(false);
-    
+
     // Callback for parent component
     if (onSiteSelect) {
       onSiteSelect(newSite);
@@ -1230,7 +1234,7 @@ const Location = ({ onSiteSelect, initialSites = [] }) => {
     <div className="min-h-screen bg-gray-100">
       {/* Chin State Introduction Section */}
       <ChinStateIntro />
-      
+
       {/* SMR Siting Tool Section */}
       <div className="max-w-7xl mx-auto p-5 flex flex-col" style={{ minHeight: '800px' }}>
         {/* Header */}
@@ -1243,21 +1247,19 @@ const Location = ({ onSiteSelect, initialSites = [] }) => {
         <div className="flex gap-1 mb-5 bg-gray-200 p-1 rounded-lg">
           <button
             onClick={() => setActiveTab('siting')}
-            className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-all ${
-              activeTab === 'siting' 
-                ? 'bg-white text-gray-900 shadow-sm' 
+            className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-all ${activeTab === 'siting'
+                ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-500 hover:text-gray-700'
-            }`}
+              }`}
           >
             📍 Site Selection
           </button>
           <button
             onClick={() => setActiveTab('grid')}
-            className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-all ${
-              activeTab === 'grid' 
-                ? 'bg-white text-gray-900 shadow-sm' 
+            className={`flex-1 py-2.5 px-4 rounded-md text-sm font-medium transition-all ${activeTab === 'grid'
+                ? 'bg-white text-gray-900 shadow-sm'
                 : 'text-gray-500 hover:text-gray-700'
-            }`}
+              }`}
           >
             ⚡ Grid Simulation
           </button>
