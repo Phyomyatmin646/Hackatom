@@ -209,7 +209,6 @@ const DataCenter = () => {
             {selectedFarm && (
               <div className="mt-6 p-6 bg-blue-50 rounded-lg shadow-inner animate-fadeInUp flex flex-col md:flex-row gap-6 items-center">
                 {/* 🔥 Image Slider Section */}
-                {/* 🔥 Image Slider Section */}
                 <div className="relative w-full md:w-1/2">
                   <img
                     src={selectedFarm.images[currentSlide]}
@@ -245,11 +244,22 @@ const DataCenter = () => {
                           className={`w-3 h-3 rounded-full ${
                             idx === currentSlide ? "bg-blue-600" : "bg-white/60"
                           }`}
-                        ></div>
+                          
+                        >
+                          
+                        </div>
                       ))}
+                      
                     </div>
+                    
                   )}
+                  
                 </div>
+                 {/* Text Box (Slider ဘေး) */}
+  <div className="w-full md:w-1/2 bg-white p-4 rounded-lg shadow flex flex-col justify-center">
+    <h2 className="text-xl font-bold mb-2">{selectedFarm.title}</h2>
+    <p className="text-gray-700">{selectedFarm.details}</p>
+  </div>
               </div>
             )}
           </div>
